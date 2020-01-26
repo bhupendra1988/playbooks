@@ -1,0 +1,13 @@
+---
+- name: Creating user and creating a file in their home directory on manage nodes
+  hosts: all
+  become: true
+  tasks:
+   - name: Creating user
+     user:
+      name: user1
+      state: present
+   - name: Creating file in their home directory
+     file:
+      name: /home/user1/file1
+      state: touch
