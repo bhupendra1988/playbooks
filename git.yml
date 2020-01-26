@@ -1,0 +1,14 @@
+---
+- name: Installing git and cloning remote git repo on ubuntu manage nodes
+  hosts: all
+  become: true
+  tasks:
+   -name: Installing git
+    apt:
+     name: git
+     state: present
+     update_cache: yes
+   -name:
+    git:
+     repo: https://github.com/selenium-saikrishna/FunctionalTesting.git
+     dest: /home/ubuntu/testing
